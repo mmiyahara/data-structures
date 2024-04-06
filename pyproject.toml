@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "data-structures"
+description = "Data structures implemented with Python."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/mmiyahara/data-strucures.git"
+Issues = "https://github.com/mmiyahara/data-strucures/issues"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.hatch.version]
+path = "data_structures/__about__.py"
+
+[tool.hatch.envs.test]
+dependencies = [
+    "pytest"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["data_structures"]
